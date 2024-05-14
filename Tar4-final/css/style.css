@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+main,
+footer,
+nav,
+aside,
+section,
+div {
+  display: block;
+}
+
+body {
+  background-color: #e8c59c;
+}
+
+header {
+  height: 130px;
+  /* במידה ויש רווח קטן למעלה נוסיף רווח קטן לתוך האובייקט באמצעות זה */
+  padding-top: 1px;
+}
+
+#logo {
+  display: block;
+  background: url("../images/big-bang-theory-logo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 118px;
+  width: 306px;
+  margin-top: 6px;
+  margin-left: 8px;
+}
+
+#wrapper {
+  width: 1400px;
+  margin: 0 auto;
+  margin-top: 6px;
+}
+
+section#content {
+  background: url("../images/big-bang-theory-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  padding-top: 1px;
+  margin-bottom: 70px;
+  border-radius: 5px;
+}
+
+section#aside-and-boxes {
+  display: flex;
+  justify-content: space-between;
+}
+
+aside {
+  height: 607px;
+  width: 377px;
+  background-color: #e8c59c;
+  opacity: 0.5;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+main {
+  height: 615px;
+  width: 616px;
+  display: flex; /* עוזר בפריסה של האובייקטים וברספונסיביות*/
+  flex-wrap: wrap; /* מגדיר את כל האובייקטים כחתיכה אחת ויורד שורה במידת הצורך*/
+  align-content: flex-start;
+}
+
+footer {
+  height: 69px;
+  width: 1384px;
+  background-color: #e8c59c;
+  opacity: 0.5;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+/* Inside main */
+main > section {
+  background-color: #e8c59c;
+  height: 100px;
+  width: 300px;
+  border-radius: 5px; /*מעגל את הפינות*/
+  margin-top: 8px;
+  margin-right: 8px;
+  display: flex; /*Added*/
+}
+
+main > section > img {
+  height: 87px;
+  width: 130px;
+  margin-top: 7px; /*Added*/
+  margin-left: 5px; /*Added*/
+}
+
+main > section > p {
+  color: #ffffff;
+  font-family: arial;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-top: 12px; /*Added*/
+  margin-left: 8px; /*Added*/
+}
+
+.play-button {
+  background: url("../images/movie-player-button.png");
+  height: 28px;
+  width: 28px;
+  position: absolute; /*Added */
+  margin-top: 36px; /*Added */
+  margin-left: 56px; /*Added */
+}
+
+/* רספונסיביות - התאמה למובייל/ טבלאט/ דסקטופ */
+
+@media (max-width: 1420px) {
+  /*התאמה למובייל*/
+  body {
+    background-color: #000000;
+  }
+
+  aside,
+  footer {
+    /*כדי להעלים את האובייקטים האלה*/
+    display: none;
+  }
+
+  #wrapper, main, main > section {
+    /*ה-wrapper וה-main ברוחב 300 פיקסלים וממורכזים*/
+    margin: 0, auto;
+    width: 300px;
+  }
+
+  section#content {
+    /*תמונת הרקע נעלמת*/
+    background: none;
+  }
+
+  header {
+    /*הגובה של ה-header הוא px100*/
+    height: 100px;
+  }
+
+  #logo {
+    /*הלוגו קטן לרוחב 175 פיקסלים ולאורך 67 פיקסלים, 17 פיקסלים רווח מלמעלה,וממורכז לאמצע*/
+    height: 67px;
+    width: 175px;
+    margin: auto;
+    margin-top: 17px;
+  }
+}
+
+@media ((min-width:800px) and (max-width: 1420px)) {   /*התאמה לטאבלאט*/
+  #wrapper, main ,main > section {
+    width: 600px;
+  }
+}
