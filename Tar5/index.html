@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript - console printing</title>
+    <script src="js/scripts.js"></script>
+  </head>
+  <body>
+    <script>
+      console.log("ex1 - print to console");
+      console.log("log");
+      console.error("error");
+      console.warn("warn");
+      console.debug("debug");
+
+      console.log("ex2 - change console & let");
+      const a = 1;
+      console.log(a);
+      // a=2;
+      // -- error - can't change const
+      // console.log(a);
+      console.error("can't change const");
+      let b = 3;
+      console.log(b);
+      b = 4;
+      console.log(b);
+
+      console.log("ex3 - global & blocked parmeters");
+      var c = 10; //a is global
+      let d = 20;
+      if (c) {
+        var c = 4; //a is still global
+        let d = 6; //let is blocked
+      }
+      console.log(c);
+      console.log(d);
+
+      console.log("ex4 - func IIFF - immediate function");
+      console.log("global vars - change vars out the func");
+      let e = 8;
+      let f = 2;
+      (function () {
+        e = 10;
+        f = 5;
+        //global vars - change vars out the func
+        console.log("e + f = ", e + f);
+      })();
+      console.log("e = ", e);
+      console.log("f = ", f);
+
+      console.log("static vars - not change vars out the func");
+      let g = 8;
+      let h = 2;
+      (function () {
+        let g = 10;
+        let h = 5;
+        //static vars - not change vars out the func
+        console.log("g + h = ", g + h);
+      })();
+      console.log("g = ", g);
+      console.log("h = ", h);
+
+      console.log("ex5 - global & function & block var");
+      let globalVar = 1;
+      function functionName() {
+        let functionVar = 2;
+        console.log("inside function", functionVar);
+      }
+      {
+        let blockVar = 3;
+        console.log(blockVar);
+      }
+      functionName();
+      console.log(globalVar);
+
+      console.log("ex6 - Hoisting");
+      setAllVals();
+
+      console.log("ex7 - ‘this’ keyword");
+      var fullName = "John Doe";
+      var obj1 = {
+        fullName: "Colin Ihrig",
+        prop: {
+          fullName: "Aurelio De Rosa",
+          getFullName: function () {
+            return this.fullName;
+          },
+        },
+      };
+      console.log("function");
+      console.log(obj1.prop.getFullName());
+      var test1 = obj1.prop.getFullName;
+      console.log(test1());
+      var obj2 = {
+        fullName: "Colin Ihrig",
+        prop: {
+          fullName: "Aurelio De Rosa",
+          getFullName: () => {
+            return this.fullName;
+          },
+        },
+      };
+      console.log("function =>");
+      console.log(obj2.prop.getFullName());
+      var test2 = obj2.prop.getFullName;
+      console.log(test2());
+    </script>
+  </body>
+</html>

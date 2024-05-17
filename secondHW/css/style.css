@@ -97,6 +97,7 @@ nav a#home {
   font-weight: 800;
   line-height: 130.94px;
   text-align: left;
+  color: #612999;
 }
 
 #enjoy > p {
@@ -112,6 +113,7 @@ nav a#home {
   font-weight: 600;
   line-height: 32.74px;
   text-align: left;
+  color: #000000;
 }
 
 #enjoy {
@@ -124,7 +126,6 @@ nav a#home {
   height: 797px;
   gap: 0px;
   opacity: 0px;
-  color: #000000;
 }
 
 #wrapper {
