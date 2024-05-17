@@ -7,99 +7,132 @@ header,
 main,
 footer,
 nav,
-aside,
 section,
 div {
   display: block;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   background-color: #ffffff;
+  font-family: Nunito;
 }
 
 header {
-  height: 130px;
-  /* במידה ויש רווח קטן למעלה נוסיף רווח קטן לתוך האובייקט באמצעות זה */
-  padding-top: 1px;
+  height: 128px;
 }
 
 #logo {
-  display: block;
-  background: url("../images_not_good/logo\ image.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  display: inline-block;
+  background: url("../images/ship.png");
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
   height: 64px;
   width: 64px;
-  margin-top: 6px;
-  margin-left: 8px;
+  margin-top: 32px;
+  margin-left: 32px;
+}
+
+#logo_name {
+  display: inline-block;
+  position: absolute;
+  width: 220px;
+  height: 33px;
+  padding-top: 53px;
+  /* padding-top: 20px; */
+  /* padding-left: 93px; */
+  /* margin-top: 53px; */
+  /* margin-left: 93px; */
+  gap: 0px;
+  opacity: 0px;
+  color: #3e3f43;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 6px;
+}
+
+nav {
+  /* padding-top: 16px; */
+  display: inline;
+  position: absolute;
+  /* width: 197px; */
+  height: 41px;
+  /* padding-top: 32px; */
+  /* padding-top: 48px; */
+  margin-top: 48px;
+  margin-left: 335px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Nunito;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 40.92px;
+  text-align: left;
+  margin-right: 64px;
+  /* color: #612999; */
+}
+nav a:not(:last-child){
+  margin-right: 64px;
+  color: #612999;
+}
+
+nav a#home {
+  font-weight: 700;
+}
+
+#enjoy > h1 {
+  width: 448px;
+  height: 131px;
+  margin-top: 32px;
+  margin-left: 32px;
+  gap: 0px;
+  opacity: 0px;
+  /* font-family: Nunito; */
+  font-size: 96px;
+  font-weight: 800;
+  line-height: 130.94px;
+  text-align: left;
+}
+
+#enjoy > p {
+  display:block;
+  position: absolute;
+  width: 448px;
+  height: 99px;
+  margin-top: 163px;
+  margin-left: 32px;
+  gap: 0px;
+  opacity: 0px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.74px;
+  text-align: left;
+}
+
+#enjoy {
+  display:flex;
+  position: static;
+  background: url("../images/enjoy.png");
+  background-repeat: no-repeat;
+  /* size: 100%; */
+  width: 1200px;
+  height: 797px;
+  gap: 0px;
+  opacity: 0px;
+  color: #000000;
 }
 
 #wrapper {
-  width: 1400px;
+  width: 1200px;
   margin: 0 auto;
-  margin-top: 6px;
+  margin-top: 128px;
 }
 
-section#content {
-  background: url("../images/big-bang-theory-bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 700px;
-  padding-top: 1px;
-  margin-bottom: 70px;
-  border-radius: 5px;
-}
-
-main {
-  height: 615px;
-  width: 616px;
-  display: flex; /* עוזר בפריסה של האובייקטים וברספונסיביות*/
-  flex-wrap: wrap; /* מגדיר את כל האובייקטים כחתיכה אחת ויורד שורה במידת הצורך*/
-  align-content: flex-start;
-}
-
-footer {
-  height: 69px;
-  width: 1384px;
-  background-color: #efecff;
-  opacity: 0.5;
-  margin-top: 8px;
-  margin-left: 8px;
-}
-
-/* Inside main */
-main > section {
-  background-color: #FFFFFF;
-  height: 100px;
-  width: 300px;
-  border-radius: 5px; /*מעגל את הפינות*/
-  margin-top: 8px;
-  margin-right: 8px;
-  display: flex; /*Added*/
-}
-
-main > section > img {
-  height: 87px;
-  width: 130px;
-  margin-top: 7px; /*Added*/
-  margin-left: 5px; /*Added*/
-}
-
-main > section > p {
-  color: #ffffff;
-  font-family: arial;
-  font-weight: bold;
-  font-size: 12px;
-  text-transform: uppercase;
-  margin-top: 12px; /*Added*/
-  margin-left: 8px; /*Added*/
-}
-
-.play-button {
-  background: #EFECFF;
-  height: 28px;
-  width: 28px;
-  position: absolute; /*Added */
-  margin-top: 36px; /*Added */
-  margin-left: 56px; /*Added */
+.card {
+  display: flex;
 }

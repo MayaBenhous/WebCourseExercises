@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+main,
+footer,
+nav,
+aside,
+section,
+div {
+  display: block;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+header {
+  height: 130px;
+  /* במידה ויש רווח קטן למעלה נוסיף רווח קטן לתוך האובייקט באמצעות זה */
+  padding-top: 1px;
+}
+
+#logo {
+  display: block;
+  background: url("../images_not_good/logo\ image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 64px;
+  width: 64px;
+  margin-top: 6px;
+  margin-left: 8px;
+}
+
+#wrapper {
+  width: 1400px;
+  margin: 0 auto;
+  margin-top: 6px;
+}
+
+section#content {
+  background: url("../images/big-bang-theory-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  padding-top: 1px;
+  margin-bottom: 70px;
+  border-radius: 5px;
+}
+
+main {
+  height: 615px;
+  width: 616px;
+  display: flex; /* עוזר בפריסה של האובייקטים וברספונסיביות*/
+  flex-wrap: wrap; /* מגדיר את כל האובייקטים כחתיכה אחת ויורד שורה במידת הצורך*/
+  align-content: flex-start;
+}
+
+footer {
+  height: 69px;
+  width: 1384px;
+  background-color: #efecff;
+  opacity: 0.5;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+/* Inside main */
+main > section {
+  background-color: #FFFFFF;
+  height: 100px;
+  width: 300px;
+  border-radius: 5px; /*מעגל את הפינות*/
+  margin-top: 8px;
+  margin-right: 8px;
+  display: flex; /*Added*/
+}
+
+main > section > img {
+  height: 87px;
+  width: 130px;
+  margin-top: 7px; /*Added*/
+  margin-left: 5px; /*Added*/
+}
+
+main > section > p {
+  color: #ffffff;
+  font-family: arial;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-top: 12px; /*Added*/
+  margin-left: 8px; /*Added*/
+}
+
+.play-button {
+  background: #EFECFF;
+  height: 28px;
+  width: 28px;
+  position: absolute; /*Added */
+  margin-top: 36px; /*Added */
+  margin-left: 56px; /*Added */
+}
