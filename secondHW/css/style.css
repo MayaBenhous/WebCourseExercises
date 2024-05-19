@@ -14,11 +14,13 @@ div {
 
 a {
   text-decoration: none;
+  color: #612999;
 }
 
 body {
   background-color: #ffffff;
   font-family: Nunito;
+  overflow-x: hidden;
 }
 
 header {
@@ -27,9 +29,7 @@ header {
 
 #logo {
   display: inline-block;
-  background: url("../images/ship.png");
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
+  background: url("../images/ship.jpeg");
   height: 64px;
   width: 64px;
   margin-top: 32px;
@@ -42,10 +42,6 @@ header {
   width: 220px;
   height: 33px;
   padding-top: 53px;
-  /* padding-top: 20px; */
-  /* padding-left: 93px; */
-  /* margin-top: 53px; */
-  /* margin-left: 93px; */
   gap: 0px;
   opacity: 0px;
   color: #3e3f43;
@@ -54,16 +50,13 @@ header {
   font-weight: 700;
   line-height: normal;
   letter-spacing: 6px;
+  text-transform: uppercase;
 }
 
 nav {
-  /* padding-top: 16px; */
   display: inline;
   position: absolute;
-  /* width: 197px; */
   height: 41px;
-  /* padding-top: 32px; */
-  /* padding-top: 48px; */
   margin-top: 48px;
   margin-left: 335px;
   gap: 0px;
@@ -74,11 +67,106 @@ nav {
   line-height: 40.92px;
   text-align: left;
   margin-right: 64px;
-  /* color: #612999; */
-}
-nav a:not(:last-child){
-  margin-right: 64px;
   color: #612999;
+}
+
+nav a:not(:last-child) {
+  margin-right: 64px;
+}
+
+footer {
+  /* width: 1200px; */
+  height: 287px;
+  width: 100vw;
+  /* height: 100vw; */
+  /* margin-top: 2713px; */
+  /* padding-bottom: 0px; */
+  gap: 0px;
+  opacity: 0px;
+  background: #efecff;
+  position: relative;
+}
+
+footer > section {
+  margin-left: 32px;
+  margin-top: 16px;
+  position: absolute;
+}
+
+footer > h3 {
+  position: absolute;
+  width: 126px;
+  height: 28px;
+  margin-top: 32px;
+  margin-left: 32px;
+  margin-bottom: 8px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Nunito;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: left;
+  color: #333333;
+  text-transform: uppercase;
+}
+
+#follow_us {
+  margin-left: 302px;
+  position: absolute;
+}
+
+#links_icons {
+  position: absolute;
+  display: flex;
+  margin-top: 24px;
+}
+
+#links_icons > a {
+  position: relative;
+  margin-top: 122px;
+  margin-right: 24px;
+}
+
+footer > li {
+  position: absolute;
+  width: 45px;
+  height: 22px;
+  margin-top: 24px;
+  margin-left: 32px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Nunito;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21.82px;
+  text-align: left;
+  color: #333333;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 8px;
+}
+
+#copyright {
+  position: absolute;
+  /* display: flex; */
+  padding-top: 158px;
+  width: 198px;
+  height: 18px;
+  margin-top: 24px;
+  margin-left: 32px;
+  margin-bottom: 0px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Nunito;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21.82px;
+  text-align: left;
+  color: #333333;
+  text-transform: uppercase;
 }
 
 nav a#home {
@@ -92,7 +180,6 @@ nav a#home {
   margin-left: 32px;
   gap: 0px;
   opacity: 0px;
-  /* font-family: Nunito; */
   font-size: 96px;
   font-weight: 800;
   line-height: 130.94px;
@@ -101,7 +188,7 @@ nav a#home {
 }
 
 #enjoy > p {
-  display:block;
+  display: block;
   position: absolute;
   width: 448px;
   height: 99px;
@@ -117,23 +204,278 @@ nav a#home {
 }
 
 #enjoy {
-  display:flex;
+  display: flex;
   position: static;
-  background: url("../images/enjoy.png");
+  background: url("../images/enjoy.jpeg");
+  /* background: url("../images/enjoy_old.jpeg"); */
   background-repeat: no-repeat;
-  /* size: 100%; */
-  width: 1200px;
+  width: 100vw;
   height: 797px;
+  gap: 0px;
+  opacity: 0px;
+  overflow-y: hidden;
+}
+
+#about {
+  font-family: Nunito;
+}
+
+#about > h2 {
+  width: 136.44px;
+  height: 40px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  margin-left: 32px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Rubik;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: left;
+  color: #612999;
+}
+
+#about > p {
+  width: 1136px;
+  height: 85px;
+  margin-top: 24px;
+  margin-left: 32px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Rubik;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28.13px;
+  text-align: justified;
+  color: #000000;
+}
+
+#popular_trips > h2 {
+  width: 282px;
+  height: 40px;
+  margin-top: 39px;
+  margin-left: 32px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Rubik;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: left;
+  color: #612999;
+}
+
+#container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 39px;
+  margin-left: 32px;
+}
+
+.card {
+  /* display: flex; */
+  flex-wrap: wrap;
+  width: 376px;
+  height: 496px;
+  /* margin-top: 27px; */
+  /* margin-left: 32px; */
+  margin-right: 32px;
+  margin-bottom: 27px;
+  flex-shrink: 0;
+  /* gap: 376px 475px; */
+  border-radius: 38px;
+  opacity: 0px;
+  background: #efecff;
+  box-shadow: 0px 6px 40px 0px #3984bb0d;
+}
+
+.card > img {
+  position: absolute;
+  width: 376px;
+  height: 276px;
+  gap: 0px;
+  border-radius: 38px;
+  opacity: 0px;
+}
+
+.card > h4 {
+  position: absolute;
+  width: 221px;
+  height: 38px;
+  margin-top: 297px;
+  margin-left: 32px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Abel;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 38.23px;
+  text-align: justified;
+  color: #000000;
+}
+
+.card > p {
+  position: absolute;
+  width: 315px;
+  height: 96px;
+  margin-top: 347px;
+  margin-left: 32px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Abel;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.94px;
+  text-align: left;
+  color: #000000;
+}
+
+.card > .price {
+  width: 136px;
+  height: 45px;
+  margin-top: 415px;
+  margin-left: 32px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Abel;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 44.6px;
+  text-align: justified;
+  color: #612999;
+}
+
+.card > .heart_back {
+  position: absolute;
+  background: url("../images/chose/Ellipse\ heart\ 1.png");
+  width: 47px;
+  height: 47px;
+  margin-top: 40px;
+  margin-left: 290px;
   gap: 0px;
   opacity: 0px;
 }
 
-#wrapper {
-  width: 1200px;
-  margin: 0 auto;
-  margin-top: 128px;
+.card > .heart_button {
+  position: absolute;
+  background: url("../images/chose/heart\ 1.png");
+  width: 23px;
+  height: 20px;
+  margin-top: 54px;
+  margin-left: 302px;
+  gap: 0px;
+  opacity: 0px;
 }
 
-.card {
+.card > .cart_back {
+  position: absolute;
+  background: url("../images/chose/Ellipse\ cart\ 3.png");
+  width: 63px;
+  height: 63px;
+  margin-top: 406px;
+  margin-left: 262px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.card > .cart_button {
+  position: absolute;
+  background: url("../images/chose/shopping-basket\ 3.png");
+  width: 31px;
+  height: 31px;
+  margin-top: 420px;
+  margin-left: 278px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+nav a#our_ships {
+  font-weight: 700;
+}
+
+#wrapper {
+  margin-left: 32px;
+}
+
+#images_ships {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 300px;
+  margin-top: 32px;
+  gap: 0px;
+  border: 4px 0px 0px 0px;
+  opacity: 0px;
+}
+
+#images_ships > img:not(:last-child) {
+  margin-right: 32px;
+}
+
+#images_ships > img {
+  border: 4px solid #e6dbfe;
+}
+
+#list_of_trips > h2 {
+  width: 275px;
+  height: 40px;
+  margin-top: 32px;
+  margin-left: 32px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Rubik;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: left;
+  color: #612999;
+}
+
+#list_of_trips > li {
+  position: relative;
   display: flex;
 }
+
+.trip > .missle_back {
+  position: absolute;
+  width: 82px;
+  height: 82px;
+  margin-top: 32px;
+  margin-left: 32px;
+  gap: 0px;
+  border-radius: 46.5px;
+  opacity: 0px;
+  background: url("../images/chose/circle1.jpeg");
+  z-index: 0;
+  display: inline-block;
+}
+
+.trip > .missle {
+  position: absolute;
+  width: 29px;
+  height: 42.38px;
+  margin-top: 52px;
+  margin-left: 58px;
+  gap: 0px;
+  opacity: 0px;
+  background: url("../images/chose/missle.jpeg");
+  z-index: 1;
+}
+
+.trip > p {
+  position: absolute;
+  /* width: 181px; */
+  height: 14px;
+  margin-top: 13px;
+  margin-left: 16px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Rubik;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align: left;
+}
+
