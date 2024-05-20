@@ -75,12 +75,8 @@ nav a:not(:last-child) {
 }
 
 footer {
-  /* width: 1200px; */
   height: 287px;
   width: 100vw;
-  /* height: 100vw; */
-  /* margin-top: 2713px; */
-  /* padding-bottom: 0px; */
   gap: 0px;
   opacity: 0px;
   background: #efecff;
@@ -89,17 +85,14 @@ footer {
 
 footer > section {
   margin-left: 32px;
-  margin-top: 16px;
+  margin-top: 32px;
   position: absolute;
 }
 
-footer > h3 {
-  position: absolute;
+footer section ul li h3 {
   width: 126px;
   height: 28px;
-  margin-top: 32px;
-  margin-left: 32px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   gap: 0px;
   opacity: 0px;
   font-family: Nunito;
@@ -118,8 +111,8 @@ footer > h3 {
 
 #links_icons {
   position: absolute;
-  display: flex;
-  margin-top: 24px;
+  display: block;
+  margin-top: 182px;
 }
 
 #links_icons > a {
@@ -128,8 +121,12 @@ footer > h3 {
   margin-right: 24px;
 }
 
+#links_icons img {
+  width: 20px;
+  height: 20px;
+}
+
 footer > li {
-  position: absolute;
   width: 45px;
   height: 22px;
   margin-top: 24px;
@@ -150,13 +147,10 @@ li {
 }
 
 #copyright {
-  position: absolute;
-  /* display: flex; */
-  padding-top: 158px;
+  display: block;
   width: 198px;
   height: 18px;
-  margin-top: 24px;
-  margin-left: 32px;
+  margin-top: 16px;
   margin-bottom: 0px;
   gap: 0px;
   opacity: 0px;
