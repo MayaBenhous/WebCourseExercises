@@ -81,6 +81,7 @@ footer {
   opacity: 0px;
   background: #efecff;
   position: relative;
+  margin-top: 32px;
 }
 
 footer > section {
@@ -260,7 +261,7 @@ nav a#home {
   color: #612999;
 }
 
-#container{
+#container {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -427,13 +428,19 @@ nav a#our_ships {
   color: #612999;
 }
 
-#list_of_trips > li {
-  position: relative;
-  display: flex;
+.trip {
+  width: 279px;
+  height: 82px;
+  top: 32px;
+  left: 32px;
+  gap: 0px;
+  border-radius: 46.5px;
+  opacity: 0px;
 }
 
-.trip > .missle_back {
+.missle_back {
   position: absolute;
+  /* display: block; */
   width: 82px;
   height: 82px;
   margin-top: 32px;
@@ -443,27 +450,29 @@ nav a#our_ships {
   opacity: 0px;
   background: url("../images/chose/circle1.jpeg");
   z-index: 0;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
-.trip > .missle {
+.missle {
   position: absolute;
   width: 29px;
   height: 42.38px;
+  /* margin-top: 20px; */
   margin-top: 52px;
   margin-left: 58px;
+  /* margin-left: 26px; */
   gap: 0px;
   opacity: 0px;
   background: url("../images/chose/missle.jpeg");
   z-index: 1;
 }
 
-.trip > p {
-  position: absolute;
-  /* width: 181px; */
+#list_of_trips .trip p {
+  position: static;
+  width: 181px;
   height: 14px;
-  margin-top: 13px;
-  margin-left: 16px;
+  margin-top: 130px;
+  margin-left: 63px;
   gap: 0px;
   opacity: 0px;
   font-family: Rubik;
@@ -472,4 +481,3 @@ nav a#our_ships {
   line-height: 14px;
   text-align: left;
 }
-
