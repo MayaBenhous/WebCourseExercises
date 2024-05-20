@@ -508,9 +508,57 @@ nav a#our_ships {
   height: 503px;
   margin-top: 32px;
   /* margin-left: 32px; */
-  /* gap: 0px; */
-  /* opacity: 0%; */
-  color: #EFECFF;
+  gap: 0px;
+  opacity: 0px;
+  /* color: #EFECFF; */
   background-color: #EFECFF;
-    
+  display: block;
+  padding-top: 32px;
 }
+
+.select_box{
+  margin: 16px auto 16px;
+  display: block;
+}
+
+input {
+  display: block;
+  margin: 32px auto 24px;
+  padding: 3px;
+  box-shadow: 3px 3px 5px grey;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  width: 300px;
+  height: 25px;
+}
+
+label {
+  display: block;
+  color: #612999;
+  font-family: Rubik;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align:center;
+  padding: 3px;
+  margin: 16px auto 40px;
+}
+
+button {
+  display: block;
+  color: #612999;
+  font-family: Rubik;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 14px;
+  text-align:center;
+  padding: 3px;
+  box-shadow: 3px 3px 5px grey;
+  margin: 55px auto 16px;
+  height: 40px;
+  width: 80px;
+}
+
+
+
