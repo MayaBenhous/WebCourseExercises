@@ -21,6 +21,7 @@ body {
   background-color: #ffffff;
   font-family: Nunito;
   overflow-x: hidden;
+  /* width: 1200px; */
 }
 
 header {
@@ -77,11 +78,13 @@ nav a:not(:last-child) {
 footer {
   height: 287px;
   width: 100vw;
+  /* width: 1200px; */
   gap: 0px;
   opacity: 0px;
   background: #efecff;
+  /* bottom: 0px; */
+  /* position: fixed; */
   position: relative;
-  margin-top: 32px;
 }
 
 footer > section {
@@ -91,8 +94,8 @@ footer > section {
 }
 
 footer section ul li h3 {
-  width: 126px;
-  height: 28px;
+  /* width: 126px; */
+  /* height: 28px; */
   margin-bottom: 16px;
   gap: 0px;
   opacity: 0px;
@@ -429,38 +432,37 @@ nav a#our_ships {
 }
 
 .trip {
+  display: flex;
   width: 279px;
-  height: 82px;
-  top: 32px;
-  left: 32px;
-  gap: 0px;
-  border-radius: 46.5px;
-  opacity: 0px;
-}
-
-.missle_back {
-  position: absolute;
-  /* display: block; */
-  width: 82px;
   height: 82px;
   margin-top: 32px;
   margin-left: 32px;
   gap: 0px;
   border-radius: 46.5px;
   opacity: 0px;
-  background: url("../images/chose/circle1.jpeg");
-  z-index: 0;
-  /* display: inline-block; */
 }
 
-.missle {
+.trip :not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.trip > .missle_back {
+  position: relative;
+  width: 82px;
+  height: 82px;
+  gap: 0px;
+  border-radius: 46.5px;
+  opacity: 0px;
+  background: url("../images/chose/circle1.jpeg");
+  z-index: 0;
+}
+
+.trip > .missle {
   position: absolute;
   width: 29px;
   height: 42.38px;
-  /* margin-top: 20px; */
-  margin-top: 52px;
-  margin-left: 58px;
-  /* margin-left: 26px; */
+  margin-top: 20px;
+  margin-left: 26px;
   gap: 0px;
   opacity: 0px;
   background: url("../images/chose/missle.jpeg");
@@ -468,11 +470,11 @@ nav a#our_ships {
 }
 
 #list_of_trips .trip p {
-  position: static;
-  width: 181px;
+  position: absolute;
+  /* width: 300px; */
   height: 14px;
-  margin-top: 130px;
-  margin-left: 63px;
+  margin-top: 31px;
+  margin-left: 98px;
   gap: 0px;
   opacity: 0px;
   font-family: Rubik;
@@ -480,4 +482,35 @@ nav a#our_ships {
   font-weight: 400;
   line-height: 14px;
   text-align: left;
+}
+
+#your_choice {
+  margin-bottom: 198px;
+}
+
+#your_choice > h2{
+  /* width: 275px; */
+  height: 40px;
+  margin-top: 32px;
+  margin-left: 32px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Rubik;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: left;
+  color: #612999;
+}
+
+#select_trip_box {
+  width: 1136px;
+  height: 503px;
+  margin-top: 32px;
+  /* margin-left: 32px; */
+  /* gap: 0px; */
+  /* opacity: 0%; */
+  color: #EFECFF;
+  background-color: #EFECFF;
+    
 }
