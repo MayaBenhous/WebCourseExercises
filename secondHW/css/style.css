@@ -445,10 +445,6 @@ nav a#our_ships {
   text-align: left;
 }
 
-/* #your_choice {
-  margin-bottom: 287px;
-} */
-
 #your_choice > h2{
   height: 40px;
   margin-top: 32px;
@@ -470,7 +466,7 @@ nav a#our_ships {
   background-color: #EFECFF;
   display: block;
   padding-top: 43px;
-  margin-bottom: 287px;
+  margin-bottom: 485px;
 }
 
 .select_box{
