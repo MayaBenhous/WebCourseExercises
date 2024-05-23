@@ -21,7 +21,6 @@ body {
   background-color: #ffffff;
   font-family: Nunito;
   overflow-x: hidden;
-  /* width: 1200px; */
 }
 
 header {
@@ -44,7 +43,6 @@ header {
   height: 33px;
   padding-top: 53px;
   gap: 0px;
-  opacity: 0px;
   color: #3e3f43;
   font-size: 24px;
   font-style: normal;
@@ -61,7 +59,6 @@ nav {
   margin-top: 48px;
   margin-left: 335px;
   gap: 0px;
-  opacity: 0px;
   font-family: Nunito;
   font-size: 30px;
   font-weight: 400;
@@ -78,13 +75,12 @@ nav a:not(:last-child) {
 footer {
   height: 287px;
   width: 100vw;
-  /* width: 1200px; */
   gap: 0px;
-  opacity: 0px;
   background: #efecff;
-  /* bottom: 0px; */
-  /* position: fixed; */
-  position: relative;
+  bottom: 0px;
+  position: fixed;
+  /* position: relative; */
+  margin-top: 32px;
 }
 
 footer > section {
@@ -94,11 +90,8 @@ footer > section {
 }
 
 footer section ul li h3 {
-  /* width: 126px; */
-  /* height: 28px; */
   margin-bottom: 16px;
   gap: 0px;
-  opacity: 0px;
   font-family: Nunito;
   font-size: 18px;
   font-weight: 700;
@@ -136,7 +129,6 @@ footer > li {
   margin-top: 24px;
   margin-left: 32px;
   gap: 0px;
-  opacity: 0px;
   font-family: Nunito;
   font-size: 16px;
   font-weight: 400;
@@ -157,7 +149,6 @@ li {
   margin-top: 16px;
   margin-bottom: 0px;
   gap: 0px;
-  opacity: 0px;
   font-family: Nunito;
   font-size: 16px;
   font-weight: 600;
@@ -177,7 +168,6 @@ nav a#home {
   margin-top: 32px;
   margin-left: 32px;
   gap: 0px;
-  opacity: 0px;
   font-size: 96px;
   font-weight: 800;
   line-height: 130.94px;
@@ -193,7 +183,6 @@ nav a#home {
   margin-top: 163px;
   margin-left: 32px;
   gap: 0px;
-  opacity: 0px;
   font-size: 24px;
   font-weight: 600;
   line-height: 32.74px;
@@ -205,12 +194,10 @@ nav a#home {
   display: flex;
   position: static;
   background: url("../images/enjoy.jpeg");
-  /* background: url("../images/enjoy_old.jpeg"); */
   background-repeat: no-repeat;
   width: 100vw;
   height: 797px;
   gap: 0px;
-  opacity: 0px;
   overflow-y: hidden;
 }
 
@@ -225,7 +212,6 @@ nav a#home {
   margin-bottom: 32px;
   margin-left: 32px;
   gap: 0px;
-  opacity: 0px;
   font-family: Rubik;
   font-size: 40px;
   font-weight: 500;
@@ -240,12 +226,10 @@ nav a#home {
   margin-top: 24px;
   margin-left: 32px;
   gap: 0px;
-  opacity: 0px;
   font-family: Rubik;
   font-size: 20px;
   font-weight: 400;
   line-height: 28.13px;
-  text-align: justified;
   color: #000000;
 }
 
@@ -255,7 +239,6 @@ nav a#home {
   margin-top: 39px;
   margin-left: 32px;
   gap: 0px;
-  opacity: 0px;
   font-family: Rubik;
   font-size: 40px;
   font-weight: 500;
@@ -270,21 +253,17 @@ nav a#home {
   justify-content: flex-start;
   margin-top: 39px;
   margin-left: 32px;
+  margin-bottom: 287px;
 }
 
 .card {
-  /* display: flex; */
   flex-wrap: wrap;
   width: 376px;
   height: 496px;
-  /* margin-top: 27px; */
-  /* margin-left: 32px; */
   margin-right: 32px;
   margin-bottom: 27px;
   flex-shrink: 0;
-  /* gap: 376px 475px; */
   border-radius: 38px;
-  opacity: 0px;
   background: #efecff;
   box-shadow: 0px 6px 40px 0px #3984bb0d;
 }
@@ -295,7 +274,6 @@ nav a#home {
   height: 276px;
   gap: 0px;
   border-radius: 38px;
-  opacity: 0px;
 }
 
 .card > h4 {
@@ -305,12 +283,10 @@ nav a#home {
   margin-top: 297px;
   margin-left: 32px;
   gap: 0px;
-  opacity: 0px;
   font-family: Abel;
   font-size: 30px;
   font-weight: 400;
   line-height: 38.23px;
-  text-align: justified;
   color: #000000;
 }
 
@@ -321,7 +297,6 @@ nav a#home {
   margin-top: 347px;
   margin-left: 32px;
   gap: 0px;
-  opacity: 0px;
   font-family: Abel;
   font-size: 18px;
   font-weight: 400;
@@ -336,12 +311,10 @@ nav a#home {
   margin-top: 415px;
   margin-left: 32px;
   gap: 0px;
-  opacity: 0px;
   font-family: Abel;
   font-size: 35px;
   font-weight: 400;
   line-height: 44.6px;
-  text-align: justified;
   color: #612999;
 }
 
@@ -353,7 +326,6 @@ nav a#home {
   margin-top: 40px;
   margin-left: 290px;
   gap: 0px;
-  opacity: 0px;
 }
 
 .card > .heart_button {
@@ -364,7 +336,6 @@ nav a#home {
   margin-top: 54px;
   margin-left: 302px;
   gap: 0px;
-  opacity: 0px;
 }
 
 .card > .cart_back {
@@ -375,7 +346,6 @@ nav a#home {
   margin-top: 406px;
   margin-left: 262px;
   gap: 0px;
-  opacity: 0px;
 }
 
 .card > .cart_button {
@@ -386,7 +356,6 @@ nav a#home {
   margin-top: 420px;
   margin-left: 278px;
   gap: 0px;
-  opacity: 0px;
 }
 
 nav a#our_ships {
@@ -395,6 +364,7 @@ nav a#our_ships {
 
 #wrapper {
   margin-left: 32px;
+  /* margin-bottom: 287px; */
 }
 
 #images_ships {
@@ -404,8 +374,7 @@ nav a#our_ships {
   height: 300px;
   margin-top: 32px;
   gap: 0px;
-  border: 4px 0px 0px 0px;
-  opacity: 0px;
+  border: 4px;
 }
 
 #images_ships > img:not(:last-child) {
@@ -422,7 +391,6 @@ nav a#our_ships {
   margin-top: 32px;
   margin-left: 32px;
   gap: 0px;
-  opacity: 0px;
   font-family: Rubik;
   font-size: 40px;
   font-weight: 500;
@@ -439,7 +407,6 @@ nav a#our_ships {
   margin-left: 32px;
   gap: 0px;
   border-radius: 46.5px;
-  opacity: 0px;
 }
 
 .trip :not(:last-child) {
@@ -452,9 +419,7 @@ nav a#our_ships {
   height: 82px;
   gap: 0px;
   border-radius: 46.5px;
-  opacity: 0px;
   background: url("../images/chose/circle1.jpeg");
-  z-index: 0;
 }
 
 .trip > .missle {
@@ -464,19 +429,15 @@ nav a#our_ships {
   margin-top: 20px;
   margin-left: 26px;
   gap: 0px;
-  opacity: 0px;
   background: url("../images/chose/missle.jpeg");
-  z-index: 1;
 }
 
 #list_of_trips .trip p {
   position: absolute;
-  /* width: 300px; */
   height: 14px;
   margin-top: 31px;
   margin-left: 98px;
   gap: 0px;
-  opacity: 0px;
   font-family: Rubik;
   font-size: 24px;
   font-weight: 400;
@@ -484,17 +445,15 @@ nav a#our_ships {
   text-align: left;
 }
 
-#your_choice {
-  margin-bottom: 198px;
-}
+/* #your_choice {
+  margin-bottom: 287px;
+} */
 
 #your_choice > h2{
-  /* width: 275px; */
   height: 40px;
   margin-top: 32px;
   margin-left: 32px;
   gap: 0px;
-  opacity: 0px;
   font-family: Rubik;
   font-size: 40px;
   font-weight: 500;
@@ -505,15 +464,13 @@ nav a#our_ships {
 
 #select_trip_form {
   width: 1136px;
-  height: 503px;
+  height: 460px;
   margin-top: 32px;
-  margin-left: 32px;
   gap: 0px;
-  opacity: 0px;
-  /* color: #EFECFF; */
   background-color: #EFECFF;
   display: block;
-  padding-top: 32px;
+  padding-top: 43px;
+  margin-bottom: 287px;
 }
 
 .select_box{
