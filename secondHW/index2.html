@@ -79,22 +79,22 @@
 
 		  <section id="your_choice">
 			<h2>Your Choice</h2>
-			<section id="select_trip_box">
+			<form id="select_trip_form">
 				<section class="select_box">
-					<input type="text" name="name" id="name">
 					<label for="name">Your Full Name</label>
+					<input type="text" name="name" id="name" required>
 				</section>
 				<section class="select_box">
-					<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
 					<label for="phone">Phone</label>
+					<input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
 				</section>
 				<section class="select_box">
-					<input type="email" name="email" id="email">
 					<label for="email">Email</label>
+					<input type="email" name="email" id="email" required>
 				</section>
 				<section class="select_box">
-					<button  name="button" id="button">Submit</button>
-				</section>
+					<button type="submit" id="submit">Submit</button>
+				</form>
 		  </section>
 	</div>
 	

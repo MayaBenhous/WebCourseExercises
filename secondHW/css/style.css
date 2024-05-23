@@ -503,11 +503,11 @@ nav a#our_ships {
   color: #612999;
 }
 
-#select_trip_box {
+#select_trip_form {
   width: 1136px;
   height: 503px;
   margin-top: 32px;
-  /* margin-left: 32px; */
+  margin-left: 32px;
   gap: 0px;
   opacity: 0px;
   /* color: #EFECFF; */
@@ -523,7 +523,7 @@ nav a#our_ships {
 
 input {
   display: block;
-  margin: 32px auto 24px;
+  margin: 8px auto 40px;
   padding: 3px;
   box-shadow: 3px 3px 5px grey;
   border-radius: 10px;
@@ -542,7 +542,7 @@ label {
   line-height: 14px;
   text-align:center;
   padding: 3px;
-  margin: 16px auto 40px;
+  margin: 16px auto 16px;
 }
 
 button {
