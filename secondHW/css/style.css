@@ -79,7 +79,6 @@ footer {
   background: #efecff;
   bottom: 0px;
   position: fixed;
-  /* position: relative; */
   margin-top: 32px;
 }
 
@@ -364,7 +363,6 @@ nav a#our_ships {
 
 #wrapper {
   margin-left: 32px;
-  /* margin-bottom: 287px; */
 }
 
 #images_ships {
