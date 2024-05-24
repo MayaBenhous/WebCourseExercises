@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Extra JS 5</title>
+  </head>
+
+  <body>
+    <img id="myImg" src="images/cover.jpg" width="407" height="198" /><br />
+    <input id="button" type="button" value="Change image" />
+
+    <script>
+      document.getElementById("button").onclick = () => {
+          document.getElementById("myImg").src = "images/cover2.jpg";
+      };
+    </script>
+  </body>
+</html>

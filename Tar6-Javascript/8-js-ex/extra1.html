@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Extra JS 1</title>
+  </head>
+
+  <body>
+    <p id="p1">This is a text. This is a text. This is a text.</p>
+    <input id="hide-button" type="button" value="Hide text" />
+    <input id="show-button" type="button" value="Show text" />
+    <script>
+      document.getElementById("hide-button").onclick = function() {
+		document.getElementById("p1").style.visibility = "hidden";
+	  }
+	  document.getElementById("show-button").onclick = function() {
+		document.getElementById("p1").style.visibility = "visible";
+	  }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Extra JS 8</title>
+  </head>
+
+  <body>
+    <h1>Fruits</h1>
+    <ul id="fruits-list"></ul>
+
+    <script>
+      let arrFruits = ["melon", "watermelon", "mango", "apple"];
+      let listFruits = "";
+    //   for (i = 0; i < arrFruits.length; i++) {
+    //     listFruits += "<li>" + arrFruits[i] + "</li>";
+    //   }
+    //   document.getElementById("fruits-list").innerHTML = listFruits;
+
+      for (let element of arrFruits) {
+        listFruits += "<li>" + element + "</li>";
+      }
+      document.getElementById("fruits-list").innerHTML = listFruits;
+    </script>
+  </body>
+</html>

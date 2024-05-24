@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Extra JS 2</title>
+  </head>
+
+  <body>
+    <p id="p1">This is a text. This is a text. This is a text.</p>
+
+    <input id="show-hide-button" type="button" value="Hide / Show text" />
+
+    <script>
+      document.getElementById("show-hide-button").onclick = function () {
+        if ((document.getElementById("p1").style.visibility = "hidden"))
+          document.getElementById("p1").style.visibility = "visible";
+        else {
+          document.getElementById("p1").style.visibility = "hidden";
+        }
+      };
+    </script>
+  </body>
+</html>

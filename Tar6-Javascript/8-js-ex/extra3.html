@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Extra JS 3</title>
+  </head>
+
+  <body>
+    <table style="width: 300px; height: 100px">
+      <tr>
+        <td id="Khaki-cell" style="background-color: Khaki"></td>
+        <td id="green-cell" style="background-color: PaleGreen"></td>
+        <td id="silver-cell" style="background-color: Silver"></td>
+      </tr>
+    </table>
+
+    <script>
+      document.getElementById("Khaki-cell").onmouseover = function () {
+		document.body.style.backgroundColor = this.style.backgroundColor;
+      };
+	  document.getElementById("green-cell").onmouseover = function () {
+		document.body.style.backgroundColor = this.style.backgroundColor;
+      };
+	  document.getElementById("silver-cell").onmouseover = function () {
+		document.body.style.backgroundColor = this.style.backgroundColor;
+      };
+    </script>
+  </body>
+</html>
