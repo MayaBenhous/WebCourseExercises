@@ -1,22 +1,30 @@
 {
-  "category1": "Songs",
+  "musicTitle": "Applemusic top 2024 songs",
   "songs": [
     {
-      "id": "123",
-      "name": "Cinderella",
-      "price": 16.65
+      "id": "1",
+      "artist": "Omer Adam",
+      "songName": "Millionaires"
     },
     {
-      "id": "456",
-      "name": "Snow White",
-      "price": 7.03
+      "id": "2",
+      "artist": "Osher Cohen",
+      "songName": "Plasters"
     },
     {
-      "id": "789",
-      "name": "Mickey Mouse",
-      "price": 9.23
+      "id": "3",
+      "artist": "Tuna",
+      "songName": "dizziness"
+    },
+    {
+      "id": "4",
+      "artist": "Odeya",
+      "songName": "the truth"
+    },
+    {
+      "id": "5",
+      "artist": "Avitar Banai",
+      "songName": "till tomorrow"
     }
-  ],
-  "category2": "box_name",
-  "Letters": ["M", "a", "y", "a", "B", "e", "n", "h", "o", "u", "s"]
-}
+  ]
+  }

@@ -12,7 +12,8 @@
 
     <script>
       document.getElementById("random-button").onclick = () => {
-		const randomNum = Math.floor(Math.random() * 99) + 1;
+        const randomNum = Math.floor(Math.random() * 99) + 1;
+        console.log(randomNum);
         document.getElementById("p1").innerHTML = randomNum;
         console.log(size);
       };
