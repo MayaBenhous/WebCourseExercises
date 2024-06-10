@@ -1,6 +1,7 @@
 window.onload = () => {
   initSongs();
   initRectangles();
+  eventClicksEnable();
   const contSong = document.getElementById("containerSong");
   contSong.style.display = "none";
 };
@@ -27,7 +28,11 @@ function initSongs() {
     .then((data) => populateSongsInList(data));
 }
 
-function chooseRectangleColor() {}
+function chooseRectangleColor() {
+  let color = colors[indexColor];
+  indexColor = (indexColor + 1) % colors.length;
+  return color;
+}
 
 function addRectangle() {
   if (pageRect) {
@@ -37,10 +42,9 @@ function addRectangle() {
     const rectengle = document.createElement("section");
     container.appendChild(rectengle);
     rectengle.classList.add("rect");
-    rectengle.style.backgroundColor = colors[indexColor];
-    indexColor = (indexColor + 1) % colors.length; // Wrap around to start of array
+    rectengle.style.backgroundColor = chooseRectangleColor();
     rectengle.textContent = characters[indexName];
-    indexName = (indexName + 1) % characters.length; // Wrap around to start of array
+    indexName = (indexName + 1) % characters.length;
     numRects++;
   }
 }
@@ -49,8 +53,8 @@ function subtractRectangle() {
   if (pageRect) {
     const container = document.getElementById("containerRect");
     container.removeChild(container.lastChild);
-    indexColor = (indexColor - 1 + colors.length) % colors.length; // Wrap around to end of array
-    indexName = (indexName - 1 + characters.length) % characters.length; // Wrap around to end of array// 
+    indexColor = (indexColor - 1 + colors.length) % colors.length;
+    indexName = (indexName - 1 + characters.length) % characters.length;
     numRects--;
   }
 }
@@ -82,7 +86,6 @@ function populateSongsInList(data) {
   document.querySelector("h1").innerHTML = `${data.musicTitle}`;
   const ulFrag = document.createDocumentFragment();
   const songsList = document.createElement("ul");
-  // songsList.id.add("songList");
   ulFrag.appendChild(songsList);
   for (const s in data.songs) {
     const songItem = document.createElement("li");
@@ -92,4 +95,13 @@ function populateSongsInList(data) {
     songsList.appendChild(songItem);
   }
   contSong.appendChild(ulFrag);
+}
+
+function eventClicksEnable() {
+  const addButton = document.getElementById("plus");
+  addButton.addEventListener("click", addRectangle);
+  const subButton = document.getElementById("minus");
+  subButton.addEventListener("click", subtractRectangle);
+  const switchButton = document.getElementById("type_page");
+  switchButton.addEventListener("click", switchRectanglesSongs);
 }
