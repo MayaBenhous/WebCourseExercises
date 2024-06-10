@@ -58,7 +58,7 @@ header {
   background-color: rgb(250, 244, 234);
   width: 1000px;
   margin: 0 auto;
-  height: 100vw;
+  height: (calc(100vh - 100px));
 }
 
 #containerSong {

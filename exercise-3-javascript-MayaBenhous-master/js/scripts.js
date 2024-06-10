@@ -38,30 +38,24 @@ function addRectangle() {
     container.appendChild(rectengle);
     rectengle.classList.add("rect");
     rectengle.style.backgroundColor = colors[indexColor];
-    indexColor++;
-    if (indexColor == colors.length) indexColor = 0;
+    indexColor = (indexColor + 1) % colors.length; // Wrap around to start of array
     rectengle.textContent = characters[indexName];
-    indexName++;
-    if (indexName == characters.length) indexName = 0;
+    indexName = (indexName + 1) % characters.length; // Wrap around to start of array
     numRects++;
   }
 }
 
 function subtractRectangle() {
   if (pageRect) {
-    // const wrapper = document.getElementById("wrapper");
     const container = document.getElementById("containerRect");
     container.removeChild(container.lastChild);
-    indexColor--;
-    if (indexColor < 0 || indexColor == colors.length) indexColor == 0;
-    indexName--;
-    if (indexName < 0 || indexName == characters.length) indexName == 0;
+    indexColor = (indexColor - 1 + colors.length) % colors.length; // Wrap around to end of array
+    indexName = (indexName - 1 + characters.length) % characters.length; // Wrap around to end of array// 
     numRects--;
   }
 }
 
 function switchRectanglesSongs() {
-  // const wrapper = document.getElementById("wrapper");
   if (pageRect == true) {
     const contSong = document.getElementById("containerSong");
     contSong.style.display = "block";
