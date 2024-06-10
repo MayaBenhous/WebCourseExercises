@@ -1,5 +1,4 @@
 window.onload = () => {
-  // initSongs();
   initRectangles();
 };
 
@@ -8,6 +7,7 @@ const myName = "Maya Benhous";
 const characters = myName.split(/\s*/);
 let indexColor = 0;
 let indexName = 0;
+let numRects = 0;
 let pageRect = true;
 
 function initRectangles() {
@@ -15,6 +15,7 @@ function initRectangles() {
   for (let i = 0; i < characters.length; i++) {
     addRectangle();
   }
+  // console.log(numRects);
 }
 
 function initSongs() {
@@ -38,21 +39,46 @@ function addRectangle() {
     rectengle.textContent = characters[indexName];
     indexName++;
     if (indexName == characters.length) indexName = 0;
+    numRects++;
   }
 }
 
 function subtractRectangle() {
   if (pageRect) {
     const wrapper = document.getElementById("wrapper");
-    const rectengle = wrapper.lastChild;
-    delete rectengle;
+    wrapper.removeChild(wrapper.lastChild);
     indexColor--;
+    if ((indexColor < 0)||(indexColor == colors.length)) indexColor == 0;
     indexName--;
+    if ((indexName < 0)||(indexName == characters.length)) indexName == 0;
+    numRects--;
   }
 }
 
 function switchRectanglesSongs() {
-  initSongs();
+  if (pageRect == true) {
+    console.log(pageRect);
+    initSongs();
+    const wrapper = document.getElementById("wrapper");
+    let rect;
+    console.log("from rect to song");
+    for (let i = 0; i < numRects; i++) {
+      rect = wrapper.children[i];
+      console.log("hidden");
+      rect.style.visibility = "hidden";
+    }
+  } else {
+    for (let i = 0; i < numRects; i++) {
+      rect = wrapper.children[i];
+      rect.style.visibility = "visible";
+    }
+    for (let i = 0; i < numRects; i++) {
+      rect = wrapper.children[i];
+      rect.style.visibility = "visible";
+    }
+    pageRect = true;
+    console.log(pageRect);
+  }
 }
 
 function populateSongsInList(data) {
@@ -62,6 +88,7 @@ function populateSongsInList(data) {
   document.querySelector("h1").innerHTML = `${data.musicTitle}`;
   const ulFrag = document.createDocumentFragment();
   const songsList = document.createElement("ul");
+  // songsList.id.add("songList");
   ulFrag.appendChild(songsList);
   for (const s in data.songs) {
     const songItem = document.createElement("li");
