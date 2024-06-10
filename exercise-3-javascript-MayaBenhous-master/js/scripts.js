@@ -1,5 +1,8 @@
 window.onload = () => {
+  initSongs();
   initRectangles();
+  const contSong = document.getElementById("containerSong");
+  contSong.style.display = "none";
 };
 
 const colors = ["#F0F8FF", "#7FFFD4", "#00FFFF", "#6495ED", "#E9967A"];
@@ -15,7 +18,6 @@ function initRectangles() {
   for (let i = 0; i < characters.length; i++) {
     addRectangle();
   }
-  // console.log(numRects);
 }
 
 function initSongs() {
@@ -30,8 +32,10 @@ function chooseRectangleColor() {}
 function addRectangle() {
   if (pageRect) {
     const wrapper = document.getElementById("wrapper");
+    const container = document.getElementById("containerRect");
+    wrapper.appendChild(container);
     const rectengle = document.createElement("section");
-    wrapper.appendChild(rectengle);
+    container.appendChild(rectengle);
     rectengle.classList.add("rect");
     rectengle.style.backgroundColor = colors[indexColor];
     indexColor++;
@@ -45,37 +49,31 @@ function addRectangle() {
 
 function subtractRectangle() {
   if (pageRect) {
-    const wrapper = document.getElementById("wrapper");
-    wrapper.removeChild(wrapper.lastChild);
+    // const wrapper = document.getElementById("wrapper");
+    const container = document.getElementById("containerRect");
+    container.removeChild(container.lastChild);
     indexColor--;
-    if ((indexColor < 0)||(indexColor == colors.length)) indexColor == 0;
+    if (indexColor < 0 || indexColor == colors.length) indexColor == 0;
     indexName--;
-    if ((indexName < 0)||(indexName == characters.length)) indexName == 0;
+    if (indexName < 0 || indexName == characters.length) indexName == 0;
     numRects--;
   }
 }
 
 function switchRectanglesSongs() {
+  // const wrapper = document.getElementById("wrapper");
   if (pageRect == true) {
+    const contSong = document.getElementById("containerSong");
+    contSong.style.display = "block";
+    const contRect = document.getElementById("containerRect");
+    contRect.style.display = "none";
+    pageRect = false;
     console.log(pageRect);
-    initSongs();
-    const wrapper = document.getElementById("wrapper");
-    let rect;
-    console.log("from rect to song");
-    for (let i = 0; i < numRects; i++) {
-      rect = wrapper.children[i];
-      console.log("hidden");
-      rect.style.visibility = "hidden";
-    }
   } else {
-    for (let i = 0; i < numRects; i++) {
-      rect = wrapper.children[i];
-      rect.style.visibility = "visible";
-    }
-    for (let i = 0; i < numRects; i++) {
-      rect = wrapper.children[i];
-      rect.style.visibility = "visible";
-    }
+    const contRect = document.getElementById("containerRect");
+    contRect.style.display = "flex";
+    const contSong = document.getElementById("containerSong");
+    contSong.style.display = "none";
     pageRect = true;
     console.log(pageRect);
   }
@@ -83,8 +81,10 @@ function switchRectanglesSongs() {
 
 function populateSongsInList(data) {
   const wrapper = document.getElementById("wrapper");
+  const contSong = document.getElementById("containerSong");
+  wrapper.appendChild(contSong);
   const songTitle = document.createElement("h1");
-  wrapper.appendChild(songTitle);
+  contSong.appendChild(songTitle);
   document.querySelector("h1").innerHTML = `${data.musicTitle}`;
   const ulFrag = document.createDocumentFragment();
   const songsList = document.createElement("ul");
@@ -97,5 +97,5 @@ function populateSongsInList(data) {
     songItem.innerHTML = songStr;
     songsList.appendChild(songItem);
   }
-  wrapper.appendChild(ulFrag);
+  contSong.appendChild(ulFrag);
 }

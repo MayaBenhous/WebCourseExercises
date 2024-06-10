@@ -12,8 +12,7 @@
                 <button id="plus" class="change_size" onclick="addRectangle()"><span>+</span></button>
             </div>
             <div>
-                <button class="type_page" onclick="switchRectanglesSongs()"><span>Switch to songs</span></button>
-                <!-- <button class="type_page" id="rectangles"><span>Switch to rectangles</span></button> -->
+                <button id="type_page" onclick="switchRectanglesSongs()"><span>Switch to songs</span></button>
             </div>
             <div>
                 <button id="minus" class="change_size" onclick="subtractRectangle()"><span>-</span></button></button>
@@ -21,7 +20,10 @@
         </header>
 
         <main>
-            <div id="wrapper"></div>
+            <div id="wrapper">
+                <section id="containerSong"></section>
+                <section id="containerRect"></section>
+            </div>
         </main>
         
 	</body>

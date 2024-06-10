@@ -29,7 +29,7 @@ header {
   justify-content: space-between;
 }
 
-.type_page {
+#type_page {
   font-size: 20px;
   width: 300px;
   height: 40px;
@@ -59,13 +59,21 @@ header {
   width: 1000px;
   margin: 0 auto;
   height: 100vw;
-  padding: 20px 0px 0px 20px;
+}
+
+#containerSong {
+  margin-left: 20px;
+  padding-top: 20px;
 }
 
 h1 {
   margin: 0px auto 20px;
-  width: 70%;
-  position: relative;
+  text-align: center;
+}
+
+ul {
+  margin-left: 20px;
+  padding-top: 20px;
 }
 
 li {
@@ -75,12 +83,17 @@ li {
   position: relative;
 }
 
+#containerRect {
+  margin-left: 20px;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .rect {
   width: 150px;
   height: 150px;
-  display: inline-block;
   margin: 0px 20px 20px 0px;
   text-align: center;
   font-size: larger;
 }
-
