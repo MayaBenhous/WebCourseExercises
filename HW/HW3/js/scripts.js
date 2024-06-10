@@ -36,14 +36,12 @@ function chooseRectangleColor() {
 
 function addRectangle() {
   if (pageRect) {
-    const wrapper = document.getElementById("wrapper");
     const container = document.getElementById("containerRect");
-    wrapper.appendChild(container);
     const rectengle = document.createElement("section");
-    container.appendChild(rectengle);
     rectengle.classList.add("rect");
     rectengle.style.backgroundColor = chooseRectangleColor();
     rectengle.textContent = characters[indexName];
+    container.appendChild(rectengle);
     indexName = (indexName + 1) % characters.length;
     numRects++;
   }
