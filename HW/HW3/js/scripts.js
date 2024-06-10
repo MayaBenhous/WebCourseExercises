@@ -61,6 +61,8 @@ function subtractRectangle() {
 
 function switchRectanglesSongs() {
   if (pageRect == true) {
+    const switchTitle = document.getElementById("title_switch");
+    switchTitle.textContent = "Switch to rectangles";
     const contSong = document.getElementById("containerSong");
     contSong.style.display = "block";
     const contRect = document.getElementById("containerRect");
@@ -68,6 +70,8 @@ function switchRectanglesSongs() {
     pageRect = false;
     console.log(pageRect);
   } else {
+    const switchTitle = document.getElementById("title_switch");
+    switchTitle.textContent = "Switch to songs";
     const contRect = document.getElementById("containerRect");
     contRect.style.display = "flex";
     const contSong = document.getElementById("containerSong");
