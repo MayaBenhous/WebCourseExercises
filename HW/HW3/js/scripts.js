@@ -11,7 +11,6 @@ const myName = "Maya Benhous";
 const characters = myName.split(/\s*/);
 let indexColor = 0;
 let indexName = 0;
-let numRects = 0;
 let pageRect = true;
 
 function initRectangles() {
@@ -43,7 +42,6 @@ function addRectangle() {
     rectengle.textContent = characters[indexName];
     container.appendChild(rectengle);
     indexName = (indexName + 1) % characters.length;
-    numRects++;
   }
 }
 
@@ -53,7 +51,6 @@ function subtractRectangle() {
     container.removeChild(container.lastChild);
     indexColor = (indexColor - 1 + colors.length) % colors.length;
     indexName = (indexName - 1 + characters.length) % characters.length;
-    numRects--;
   }
 }
 
