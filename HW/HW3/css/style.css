@@ -36,6 +36,12 @@ header {
   width: 300px;
   height: 40px;
   margin: 30px auto 0px;
+  background-color: #ECECEB;
+  border-width: 1px;
+}
+
+#type_page:hover {
+  background-color: #BCBEC0;
 }
 
 .change_size {
@@ -44,6 +50,12 @@ header {
   margin-top: 30px;
   margin-left: 35px;
   position: relative;
+  background-color: #ECECEB;
+  border-width: 1px;
+}
+
+.change_size:hover {
+  background-color: #BCBEC0;
 }
 
 #minus {
