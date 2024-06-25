@@ -1,29 +1,66 @@
 {
-    "songs": [
+    "Destinations": [
       {
         "id": "1",
-        "artist": "Omer Adam",
-        "songName": "Millionaires"
+        "dest_name": "Sri Lanka"
       },
       {
         "id": "2",
-        "artist": "Osher Cohen",
-        "songName": "Plasters"
+        "dest_name": "New York"
       },
       {
         "id": "3",
-        "artist": "Tuna",
-        "songName": "dizziness"
+        "dest_name": "Belgium"
       },
       {
         "id": "4",
-        "artist": "Odeya",
-        "songName": "the truth"
+        "dest_name": "Albania"
       },
       {
         "id": "5",
-        "artist": "Avitar Banai",
-        "songName": "till tomorrow"
+        "dest_name": "Vietnam"
+      },
+      {
+        "id": "6",
+        "dest_name": "New England"
+      },
+      {
+        "id": "7",
+        "dest_name": "Belgrade"
+      },
+      {
+        "id": "8",
+        "dest_name": "Austria"
+      },
+      {
+        "id": "9",
+        "dest_name": "Bora Bora"
+      },
+      {
+        "id": "10",
+        "dest_name": "Paris"
+      }
+    ],
+    "Types": [
+      {
+        "id": "1",
+        "type": "Rest"
+      },
+      {
+        "id": "2",
+        "type": "Extreme"
+      },
+      {
+        "id": "3",
+        "type": "Trekking"
+      },
+      {
+        "id": "4",
+        "type": "Culinary"
+      },
+      {
+        "id": "5",
+        "type": "Caravan"
       }
     ]
     }
