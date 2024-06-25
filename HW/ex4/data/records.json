@@ -1,0 +1,30 @@
+{
+    "songs": [
+      {
+        "id": "1",
+        "artist": "Omer Adam",
+        "songName": "Millionaires"
+      },
+      {
+        "id": "2",
+        "artist": "Osher Cohen",
+        "songName": "Plasters"
+      },
+      {
+        "id": "3",
+        "artist": "Tuna",
+        "songName": "dizziness"
+      },
+      {
+        "id": "4",
+        "artist": "Odeya",
+        "songName": "the truth"
+      },
+      {
+        "id": "5",
+        "artist": "Avitar Banai",
+        "songName": "till tomorrow"
+      }
+    ]
+    }
+  
