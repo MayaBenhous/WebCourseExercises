@@ -1,5 +1,5 @@
 {
-    "Destinations": [
+    "destinations": [
       {
         "id": "1",
         "dest_name": "Sri Lanka"
@@ -41,26 +41,26 @@
         "dest_name": "Paris"
       }
     ],
-    "Types": [
+    "types": [
       {
         "id": "1",
-        "type": "Rest"
+        "type_name": "Rest"
       },
       {
         "id": "2",
-        "type": "Extreme"
+        "type_name": "Extreme"
       },
       {
         "id": "3",
-        "type": "Trekking"
+        "type_name": "Trekking"
       },
       {
         "id": "4",
-        "type": "Culinary"
+        "type_name": "Culinary"
       },
       {
         "id": "5",
-        "type": "Caravan"
+        "type_name": "Caravan"
       }
     ]
     }
