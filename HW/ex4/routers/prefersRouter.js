@@ -5,7 +5,7 @@ const { prefersController } = require("../controllers/prefersController");
 const prefersRouter = new Router();
 
 prefersRouter.post("/NewPrefer/:idUser", prefersController.postNewPrefer);
-// prefersRouter.put("/UpdatePrefer/:idPrefer", prefersController.putUpdatePrefer);
+prefersRouter.put("/UpdatePrefer/:idUser", prefersController.putUpdatePrefer);
 // prefersRouter.get("/ViewAllPrefers", prefersController.getViewAllPrefers);
 
 module.exports = { prefersRouter };
