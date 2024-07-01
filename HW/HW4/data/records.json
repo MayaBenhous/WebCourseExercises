@@ -1,67 +1,43 @@
 {
-    "destinations": [
-      {
-        "id": "1",
-        "dest_name": "Sri Lanka"
-      },
-      {
-        "id": "2",
-        "dest_name": "New York"
-      },
-      {
-        "id": "3",
-        "dest_name": "Belgium"
-      },
-      {
-        "id": "4",
-        "dest_name": "Albania"
-      },
-      {
-        "id": "5",
-        "dest_name": "Vietnam"
-      },
-      {
-        "id": "6",
-        "dest_name": "New England"
-      },
-      {
-        "id": "7",
-        "dest_name": "Belgrade"
-      },
-      {
-        "id": "8",
-        "dest_name": "Austria"
-      },
-      {
-        "id": "9",
-        "dest_name": "Bora Bora"
-      },
-      {
-        "id": "10",
-        "dest_name": "Paris"
-      }
-    ],
-    "types": [
-      {
-        "id": "1",
-        "type_name": "Rest"
-      },
-      {
-        "id": "2",
-        "type_name": "Extreme"
-      },
-      {
-        "id": "3",
-        "type_name": "Trekking"
-      },
-      {
-        "id": "4",
-        "type_name": "Culinary"
-      },
-      {
-        "id": "5",
-        "type_name": "Caravan"
-      }
-    ]
+  "destinations": [
+    {
+      "id": "1",
+      "dest_name": "Sri Lanka"
+    },
+    {
+      "id": "2",
+      "dest_name": "New York"
+    },
+    {
+      "id": "3",
+      "dest_name": "Belgium"
+    },
+    {
+      "id": "4",
+      "dest_name": "Albania"
+    },
+    {
+      "id": "5",
+      "dest_name": "Vietnam"
+    },
+    {
+      "id": "6",
+      "dest_name": "New England"
+    },
+    {
+      "id": "7",
+      "dest_name": "Belgrade"
+    },
+    {
+      "id": "8",
+      "dest_name": "Austria"
+    },
+    {
+      "id": "9",
+      "dest_name": "Bora Bora"
+    },
+    {
+      "id": "10",
+      "dest_name": "Paris"
     }
-  
+  ]}
