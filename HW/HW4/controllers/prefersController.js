@@ -150,7 +150,82 @@ exports.prefersController = {
     connection.end();
   },
 
+  async getSelectedVocation(req, res) {
+    const connection = await dbConnection.createConnection();
+    const { body } = req;
+    const access_code_user = body.access_code;
+    const access_code_tblUsers = await getUserById(
+      req.params.idUser,
+      connection
+    );
+    let sameAccessCode = access_code_user === access_code_tblUsers.access_code;
+    if (!sameAccessCode) {
+      res
+        .status(400)
+        .json({
+          error: "Connection failed! access_code is not match to this user.",
+        });
+    }
+    try {
+      const [countResult] = await connection.execute(
+        `SELECT COUNT(*) as perferCount FROM tbl_40_preferences`
+      );
+      console.log(countResult[0].perferCount);
+      perfersCount = countResult[0].perferCount;
+      if (perfersCount == "5") {
+        console.log("ya!");
+        const [destination] = await connection.execute(`SELECT destination
+      FROM (SELECT destination, COUNT(*) AS cnt, MIN(curr_time) AS min_curr_time 
+        FROM tbl_40_preferences
+        GROUP BY destination
+        ORDER BY cnt DESC, min_curr_time ASC
+        LIMIT 1) AS destSel`);
+        destSelected = destination[0].destination;
 
+        const [type_vacation] = await connection.execute(`SELECT type_vacation
+      FROM (SELECT type_vacation, COUNT(*) AS cnt, MIN(curr_time) AS min_curr_time
+        FROM tbl_40_preferences
+        GROUP BY type_vacation
+        ORDER BY cnt DESC, min_curr_time ASC
+        LIMIT 1) AS typeSel`);
+        typeSelected = type_vacation[0].type_vacation;
+
+        const [dates] =
+          await connection.execute(`SELECT MAX(start_date) AS start_date, MIN(end_date) AS end_date
+      FROM tbl_40_preferences
+      WHERE
+      type_vacation = "${typeSelected}"
+      AND destination = "${destSelected}"
+      AND start_date <= (SELECT MIN(end_date) FROM tbl_40_preferences WHERE type_vacation = "${typeSelected}" AND destination = "${destSelected}")
+      AND end_date >= (SELECT MAX(start_date) FROM tbl_40_preferences WHERE type_vacation = "${typeSelected}" AND destination = "${destSelected}")`);
+
+        startDateSelected = dates[0].start_date;
+        endDateSelected = dates[0].end_date;
+
+        let selectedVocation = {
+          start_date: null,
+          end_date: null,
+          destination: null,
+          type_vacation: null,
+        };
+        selectedVocation.start_date = startDateSelected;
+        selectedVocation.end_date = endDateSelected;
+        selectedVocation.destination = destSelected;
+        selectedVocation.type_vacation = typeSelected;
+
+        res
+          .status(201)
+          .json({
+            success: `Connection success! - View selected vocation:`,
+            selectedVocation,
+          });
+      }
+      res.status(400).json({ error: "In table have under from 5" });
+    } catch (error) {
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+    connection.end();
+  },
 }
 
 async function getUserById(userId, connection) {
