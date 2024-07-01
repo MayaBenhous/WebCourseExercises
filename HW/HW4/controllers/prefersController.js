@@ -90,7 +90,6 @@ exports.prefersController = {
             console.log("here");
             console.log(update_changes[i]);
         }
-        // let validDates = true;
         let validDates = await checkDatesValid(update_changes[1], update_changes[2]);
         if (validDates === false) {
           res.status(400).json({ error: "Update failed! Dates not valid." });
@@ -273,16 +272,13 @@ async function checkDatesValid(start_date, end_date) {
 }
 
 async function getVocationFields(access_code, connection, vocation_fields) {
-  // console.log("hereeeeeeee");
   const [rows] = await connection.execute(
     `SELECT * FROM tbl_40_preferences WHERE access_code="${access_code}"`
   );
-  console.log(rows);
   vocation_fields.push(rows[0].access_code);
   vocation_fields.push(rows[0].start_date);
   vocation_fields.push(rows[0].end_date);
   vocation_fields.push(rows[0].destination);
   vocation_fields.push(rows[0].type_vacation);
-  console.log(vocation_fields);
   return (vocation_fields != null);
 }
