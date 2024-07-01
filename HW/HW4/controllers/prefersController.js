@@ -78,27 +78,20 @@ exports.prefersController = {
         body.destination,
         body.type_vacation,
       ];
-      const vocation_fields = [
-        "access_code",
-        "start_date",
-        "end_date",
-        "destination",
-        "type_vacation",
-      ];
+      const vocation_fields = [];
+      let isField = await getVocationFields(body.access_code, connection, vocation_fields);
+      console.log(sameAccessCode);
       if (sameAccessCode) {
         for (let i = 0; i < update_changes.length; i++) {
-          if (!update_changes[i])
-            if (i === 1) {
-              update_changes[1] = await getStartDate(update_changes[0],connection);
-            } else if (i === 2) {
-              update_changes[2] = await getEndDate(update_changes[0],connection);
-            } else {
-              update_changes = vocation_fields[i];
+          console.log(vocation_fields[i]);
+          if (!update_changes[i]) {
+              update_changes[i] = vocation_fields[i];
             }
-          console.log(update_changes[i]);
+            console.log("here");
+            console.log(update_changes[i]);
         }
-        let validDates = true;
-        // let validDates = await checkDatesValid(update_changes[1], update_changes[2]);
+        // let validDates = true;
+        let validDates = await checkDatesValid(update_changes[1], update_changes[2]);
         if (validDates === false) {
           res.status(400).json({ error: "Update failed! Dates not valid." });
         }
@@ -279,3 +272,17 @@ async function checkDatesValid(start_date, end_date) {
   return false;
 }
 
+async function getVocationFields(access_code, connection, vocation_fields) {
+  // console.log("hereeeeeeee");
+  const [rows] = await connection.execute(
+    `SELECT * FROM tbl_40_preferences WHERE access_code="${access_code}"`
+  );
+  console.log(rows);
+  vocation_fields.push(rows[0].access_code);
+  vocation_fields.push(rows[0].start_date);
+  vocation_fields.push(rows[0].end_date);
+  vocation_fields.push(rows[0].destination);
+  vocation_fields.push(rows[0].type_vacation);
+  console.log(vocation_fields);
+  return (vocation_fields != null);
+}
