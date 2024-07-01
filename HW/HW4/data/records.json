@@ -40,4 +40,27 @@
       "id": "10",
       "dest_name": "Paris"
     }
-  ]}
+  ],
+  "types": [
+    {
+      "id": "1",
+      "type_name": "Rest"
+    },
+    {
+      "id": "2",
+      "type_name": "Extreme"
+    },
+    {
+      "id": "3",
+      "type_name": "Trekking"
+    },
+    {
+      "id": "4",
+      "type_name": "Culinary"
+    },
+    {
+      "id": "5",
+      "type_name": "Caravan"
+    }
+  ]
+}
