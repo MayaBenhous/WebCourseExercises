@@ -53,3 +53,48 @@ exports.prefersController = {
     connection.end();
   },
 }
+
+async function checkDestExist(destination, vacationData) {
+  const lengthDestinations = vacationData.destinations.length;
+  for (let v = 0; v < lengthDestinations; v++) {
+    const vacation_dest = vacationData.destinations[v];
+    if (vacation_dest.dest_name == destination) {
+      return true;
+    }
+  }
+  return false;
+}
+
+async function checkTypeExist(type, vacationData) {
+  const lengthTypes = vacationData.types.length;
+  for (let v = 0; v < lengthTypes; v++) {
+    const vacation_type = vacationData.types[v];
+    if (vacation_type.type_name == type) return true;
+  }
+  return false;
+}
+
+async function checkDatesValid(start_date, end_date) {
+  let startDateStr = start_date;
+  let endDateStr = end_date;
+  function parseDate(dateStr) {
+    let parts = dateStr.split("/");
+    return new Date(parts[2], parts[1] - 1, parts[0]); // Note: monthIndex is zero-based
+  }
+  let startDate = parseDate(startDateStr);
+  let endDate = parseDate(endDateStr);
+  console.log(startDate); // Output: Sat Jun 29 2024 00:00:00 GMT+0000 (Coordinated Universal Time)
+  console.log(endDate); // Output: Sun Jun 30 2024 00:00:00 GMT+0000 (Coordinated Universal Time)
+  let startBeforeEnd = (startDate <= endDate);
+  console.log("Start date is before or the same as end date:", startBeforeEnd); // Output: true
+  let differenceInDays = Math.ceil(
+    (endDate - startDate) / (1000 * 60 * 60 * 24)
+  );
+  console.log("Difference in days:", differenceInDays); // Output: 1
+  if (startBeforeEnd === true) {
+    if (differenceInDays > 0 && differenceInDays <= 7) return true;
+    return false;
+  }
+  return false;
+}
+
