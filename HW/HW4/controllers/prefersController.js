@@ -153,6 +153,13 @@ exports.prefersController = {
 
 }
 
+async function getUserById(userId, connection) {
+  const [rows] = await connection.execute(
+    `SELECT access_code from tbl_40_users WHERE id=${userId}`
+  );
+  return rows[0];
+}
+
 async function checkDestExist(destination, vacationData) {
   const lengthDestinations = vacationData.destinations.length;
   for (let v = 0; v < lengthDestinations; v++) {
