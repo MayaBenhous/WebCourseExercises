@@ -282,3 +282,18 @@ async function getVocationFields(access_code, connection, vocation_fields) {
   vocation_fields.push(rows[0].type_vacation);
   return (vocation_fields != null);
 }
+
+// async function getStartDate(access_code, connection) {
+//   const [rows] = await connection.execute(
+//     `SELECT start_date FROM tbl_40_preferences WHERE access_code="${access_code}"`
+//   );
+//   return rows[0].start_date;
+// }
+
+
+// async function getEndDate(access_code, connection) {
+//   const [rows] = await connection.execute(
+//     `SELECT end_date FROM tbl_40_preferences WHERE access_code="${access_code}"`
+//   );
+//   return rows[0].end_date;
+// }
