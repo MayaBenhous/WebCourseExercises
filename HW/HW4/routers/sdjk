@@ -1,67 +1,15 @@
-{
-    "destinations": [
-      {
-        "id": "1",
-        "dest_name": "Sri Lanka"
-      },
-      {
-        "id": "2",
-        "dest_name": "New York"
-      },
-      {
-        "id": "3",
-        "dest_name": "Belgium"
-      },
-      {
-        "id": "4",
-        "dest_name": "Albania"
-      },
-      {
-        "id": "5",
-        "dest_name": "Vietnam"
-      },
-      {
-        "id": "6",
-        "dest_name": "New England"
-      },
-      {
-        "id": "7",
-        "dest_name": "Belgrade"
-      },
-      {
-        "id": "8",
-        "dest_name": "Austria"
-      },
-      {
-        "id": "9",
-        "dest_name": "Bora Bora"
-      },
-      {
-        "id": "10",
-        "dest_name": "Paris"
-      }
-    ],
-    "types": [
-      {
-        "id": "1",
-        "type_name": "Rest"
-      },
-      {
-        "id": "2",
-        "type_name": "Extreme"
-      },
-      {
-        "id": "3",
-        "type_name": "Trekking"
-      },
-      {
-        "id": "4",
-        "type_name": "Culinary"
-      },
-      {
-        "id": "5",
-        "type_name": "Caravan"
-      }
-    ]
+async postNewUser(req, res) {
+    const connection = await dbConnection.createConnection();
+    // const [rows] = await connection.execute(`SELECT * from tbl_40_users`);
+    try {
+        const {user_name, password} = req.body;
+        const accessCode = uuidv4();
+        await connection.execute(`INSERT INTO tbl_40_users (access_code, user_name, password) VALUES  ("${accessCode}", "${user_name}", "${password}")`);
+        res.status(201).json({ accessCode: accessCode });
     }
-  
+    catch (error) {
+        res.status(500).json({ Error: 'user already exist' });
+      }
+    connection.end();
+    // return rows;
+  },
