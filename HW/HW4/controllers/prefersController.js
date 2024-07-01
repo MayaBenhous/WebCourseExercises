@@ -127,6 +127,30 @@ exports.prefersController = {
     connection.end();
   },
 
+  async getViewAllPrefers(req, res) {
+    const connection = await dbConnection.createConnection();
+    const { body } = req;
+    try {
+      const [rows] = await connection.execute(
+        `SELECT * FROM tbl_40_preferences`
+      );
+      if (rows != null) {
+        res
+          .status(201)
+          .json({
+            success: `Connection success! - View all preferences:`,
+            rows,
+          });
+      } else {
+        res.status(400).json({ error: "Table is null." });
+      }
+    } catch (error) {
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+    connection.end();
+  },
+
+
 }
 
 async function checkDestExist(destination, vacationData) {
