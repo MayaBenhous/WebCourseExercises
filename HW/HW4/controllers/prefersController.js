@@ -7,48 +7,36 @@ exports.prefersController = {
     const { body } = req;
     try {
       const access_code_user = body.access_code;
-      const access_code_tblUsers = await getUserById(
-        req.params.idUser,
-        connection
-      );
-      let sameAccessCode =
-        access_code_user === access_code_tblUsers.access_code;
+      const access_code_tblUsers = await getUserById(req.params.idUser,connection);
+      let sameAccessCode = access_code_user === access_code_tblUsers.access_code;
+      let validDates = await checkDatesValid(body.start_date, body.end_date);
+      let destExist = await checkDestExist(body.destination, vacationData);
+      let typeExist = await checkTypeExist(body.type_vacation, vacationData);
       if (!sameAccessCode) {
         res.status(400).json({ error: "Connection failed! User not exist." });
       }
-      let validDates = await checkDatesValid(body.start_date, body.end_date);
-      if (!validDates) {
+      else if (!validDates) {
         res.status(400).json({ error: "Update failed! Dates not valid." });
       }
-      let destExist = await checkDestExist(body.destination, vacationData);
-      if (!destExist) {
+      else if (!destExist) {
         res
           .status(400)
           .json({ error: "Connection failed! Destination not from list." });
       }
-      let typeExist = await checkTypeExist(body.type_vacation, vacationData);
-      if (!typeExist) {
+      else if (!typeExist) {
         res
           .status(400)
           .json({ error: "Connection failed! Type not from list." });
       }
-      if (sameAccessCode && destExist && typeExist) {
+      else {
         await connection.execute(
           `INSERT INTO tbl_40_preferences (access_code, start_date, end_date, destination, type_vacation, curr_time) VALUES 
           ("${body.access_code}", "${body.start_date}", "${body.end_date}", "${body.destination}", "${body.type_vacation}", now())`
         );
-        res
-          .status(201)
-          .json({ success: `New preference is In! - connection success!` });
-      } else {
-        res
-          .status(400)
-          .json({ error: "Connection failed! User/ dest/ type not right." });
+        res.status(201).json({ success: `New preference is In! - connection success!` });
       }
     } catch (error) {
-      res
-        .status(500)
-        .json({ error: "Internal Server Error", details: error.message });
+      res.status(500).json({ error: "Internal Server Error", details: error.message });
     }
     connection.end();
   },
@@ -58,18 +46,11 @@ exports.prefersController = {
     const { body } = req;
     try {
       const access_code_user = body.access_code;
-      const access_code_tblUsers = await getUserById(
-        req.params.idUser,
-        connection
-      );
+      const access_code_tblUsers = await getUserById(req.params.idUser,connection);
       let sameAccessCode =
         access_code_user === access_code_tblUsers.access_code;
       if (!sameAccessCode) {
-        res
-          .status(400)
-          .json({
-            error: "Connection failed! access_code is not match to this user.",
-          });
+        res.status(400).json({error: "Connection failed! access_code is not match to this user.",});
       }
       let update_changes = [
         body.access_code,
@@ -91,25 +72,26 @@ exports.prefersController = {
             console.log(update_changes[i]);
         }
         let validDates = await checkDatesValid(update_changes[1], update_changes[2]);
+        let destExist = await checkDestExist(update_changes[3], vacationData);
+        let typeExist = await checkTypeExist(update_changes[4], vacationData);
         if (validDates === false) {
+          console.log("date not valid :(");
           res.status(400).json({ error: "Update failed! Dates not valid." });
         }
-        let destExist = await checkDestExist(update_changes[3], vacationData);
-        if (!destExist) {
+        else if (!destExist) {
           res.status(400).json({ error: "Update failed! Destination not from list." });
         }
-        let typeExist = await checkTypeExist(update_changes[4], vacationData);
-        if (!typeExist) {
+        else if (!typeExist) {
           res.status(400).json({ error: "Update failed! Type not from list." });
         }
-        await connection.execute(
-          `UPDATE tbl_40_preferences SET start_date="${update_changes[1]}", end_date="${update_changes[2]}", destination="${update_changes[3]}",
-            type_vacation="${update_changes[4]}", curr_time=now() WHERE access_code="${update_changes[0]}"`
-        );
-        console.log("good job!");
-        res
-          .status(201)
-          .json({ success: `Update preference is in! - connection success!` });
+        else {
+          await connection.execute(
+            `UPDATE tbl_40_preferences SET start_date="${update_changes[1]}", end_date="${update_changes[2]}", destination="${update_changes[3]}",
+              type_vacation="${update_changes[4]}", curr_time=now() WHERE access_code="${update_changes[0]}"`
+          );
+          console.log("good job!");
+          res.status(201).json({ success: `Update preference is in! - connection success!` });
+        }
       } else {
         res.status(400).json({ error: "Connection failed! User not exist." });
       }
@@ -123,16 +105,9 @@ exports.prefersController = {
     const connection = await dbConnection.createConnection();
     const { body } = req;
     try {
-      const [rows] = await connection.execute(
-        `SELECT * FROM tbl_40_preferences`
-      );
+      const [rows] = await connection.execute(`SELECT * FROM tbl_40_preferences`);
       if (rows != null) {
-        res
-          .status(201)
-          .json({
-            success: `Connection success! - View all preferences:`,
-            rows,
-          });
+        res.status(201).json({success: `Connection success! - View all preferences:`,rows,});
       } else {
         res.status(400).json({ error: "Table is null." });
       }
@@ -152,11 +127,7 @@ exports.prefersController = {
     );
     let sameAccessCode = access_code_user === access_code_tblUsers.access_code;
     if (!sameAccessCode) {
-      res
-        .status(400)
-        .json({
-          error: "Connection failed! access_code is not match to this user.",
-        });
+      res.status(400).json({error: "Connection failed! access_code is not match to this user."});
     }
     try {
       const [countResult] = await connection.execute(
@@ -167,7 +138,7 @@ exports.prefersController = {
       if (perfersCount == "5") {
         console.log("ya!");
         const [destination] = await connection.execute(`SELECT destination
-      FROM (SELECT destination, COUNT(*) AS cnt, MIN(curr_time) AS min_curr_time 
+        FROM (SELECT destination, COUNT(*) AS cnt, MIN(curr_time) AS min_curr_time 
         FROM tbl_40_preferences
         GROUP BY destination
         ORDER BY cnt DESC, min_curr_time ASC
@@ -175,7 +146,7 @@ exports.prefersController = {
         destSelected = destination[0].destination;
 
         const [type_vacation] = await connection.execute(`SELECT type_vacation
-      FROM (SELECT type_vacation, COUNT(*) AS cnt, MIN(curr_time) AS min_curr_time
+        FROM (SELECT type_vacation, COUNT(*) AS cnt, MIN(curr_time) AS min_curr_time
         FROM tbl_40_preferences
         GROUP BY type_vacation
         ORDER BY cnt DESC, min_curr_time ASC
@@ -184,12 +155,12 @@ exports.prefersController = {
 
         const [dates] =
           await connection.execute(`SELECT MAX(start_date) AS start_date, MIN(end_date) AS end_date
-      FROM tbl_40_preferences
-      WHERE
-      type_vacation = "${typeSelected}"
-      AND destination = "${destSelected}"
-      AND start_date <= (SELECT MIN(end_date) FROM tbl_40_preferences WHERE type_vacation = "${typeSelected}" AND destination = "${destSelected}")
-      AND end_date >= (SELECT MAX(start_date) FROM tbl_40_preferences WHERE type_vacation = "${typeSelected}" AND destination = "${destSelected}")`);
+          FROM tbl_40_preferences
+          WHERE
+          type_vacation = "${typeSelected}"
+          AND destination = "${destSelected}"
+          AND start_date <= (SELECT MIN(end_date) FROM tbl_40_preferences WHERE type_vacation = "${typeSelected}" AND destination = "${destSelected}")
+          AND end_date >= (SELECT MAX(start_date) FROM tbl_40_preferences WHERE type_vacation = "${typeSelected}" AND destination = "${destSelected}")`);
 
         startDateSelected = dates[0].start_date;
         endDateSelected = dates[0].end_date;
@@ -200,17 +171,13 @@ exports.prefersController = {
           destination: null,
           type_vacation: null,
         };
+
         selectedVocation.start_date = startDateSelected;
         selectedVocation.end_date = endDateSelected;
         selectedVocation.destination = destSelected;
         selectedVocation.type_vacation = typeSelected;
 
-        res
-          .status(201)
-          .json({
-            success: `Connection success! - View selected vocation:`,
-            selectedVocation,
-          });
+        res.status(201).json({success: `Connection success! - View selected vocation:`,selectedVocation,});
       }
       res.status(400).json({ error: "In table have under from 5" });
     } catch (error) {
@@ -273,8 +240,7 @@ async function checkDatesValid(start_date, end_date) {
 
 async function getVocationFields(access_code, connection, vocation_fields) {
   const [rows] = await connection.execute(
-    `SELECT * FROM tbl_40_preferences WHERE access_code="${access_code}"`
-  );
+    `SELECT * FROM tbl_40_preferences WHERE access_code="${access_code}"`);
   vocation_fields.push(rows[0].access_code);
   vocation_fields.push(rows[0].start_date);
   vocation_fields.push(rows[0].end_date);
